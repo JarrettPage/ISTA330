@@ -8,5 +8,21 @@ output: [1, 0, 1, 2]
 */
 
 var biggerAndEven = function(input) {
-
+    var countArray = [];
+    for (var i=0; i<input.length; i++){
+        var current = input[i];
+        var count = 0;
+        for (var j=0; j<input.length;j++){
+            if(current == input[j]){
+                continue;
+            }
+            else{
+                if(current<input[j] && input[j] % 2 == 0){
+                    count += 1;
+                }
+            }
+        }
+        countArray.push(count);
+    }
+    return countArray;
 };
