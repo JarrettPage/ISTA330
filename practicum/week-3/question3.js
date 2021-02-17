@@ -13,5 +13,19 @@ output: [
 */
 
 var PascalTriangle = function(n) {
+  let triangle = [];
+  for (var i=1; i<=n; i++) {
+    let arr = [];
+    for (var j=0; j<i; j++) {
+        if (j == 0 || j == i - 1) {
+            arr.push(1);
+        }
+        else {
+            arr.push((triangle[i-2][j-1] + triangle[i-2][j]));
+        }
+    }
+    triangle.push(arr);
+  }
+return triangle;
 
 };

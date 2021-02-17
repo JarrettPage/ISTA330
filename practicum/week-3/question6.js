@@ -12,5 +12,25 @@ output: 2
 */
 
 var m_element = function(input) {
-
+    var highest = 0;
+    var m = -1;
+    var pos = -1;
+    var current = 0;
+    for(var i=0; i<input.length; i++){
+        current = input[i];
+        var count = 0;
+        for(var j=0; j<input.length; j++){
+            if(current == input[j]){
+                count++;
+            }
+        }
+        if(count > highest){
+            highest = count;
+            pos = i;
+        }
+    }
+    if(highest > (input.length/2)){
+        m = input[pos];
+    }
+    return m;
 };

@@ -16,7 +16,7 @@ output: 4 because the following partition has the highest number of balanced sub
 */
 
 var maxBalanceNumber = function(input) {
-  var balance = 0;
+  //var balance = 0;
   var twos = [];
   var partitions = [];
   if(input.length % 2 == 0) {
