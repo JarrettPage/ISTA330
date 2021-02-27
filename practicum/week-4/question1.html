@@ -15,7 +15,12 @@
         and under the image display its name.
     </div>
     <div id='flowersDiv'>
-
+        <table id="myTable">
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+          </table>
     </div>
     <script>
         /*
@@ -51,6 +56,50 @@
              rose,
              waterlily
        ];
+       let firstRow = [];
+       let secondRow = [];
+       let halfWay = flowers.length / 2;
+       for(var i=0; i<flowers.length; i++){
+           if(i>halfWay-1){
+               secondRow.push(flowers[i]);
+           }
+           else{
+               firstRow.push(flowers[i]);
+           }
+       }
+       firstRow.forEach(element => {
+        var img = document.createElement("img");
+        //var text = document.createElement("p");
+        //text.innerText = element.name;
+        img.src = element.picture;
+        var rowOne=document.getElementById("myTable").rows[0];
+        var things=rowOne.insertCell(-1);
+        things.innerHTML=element.name;
+        things.appendChild(img);
+        //document.getElementById('flowersDiv').appendChild(img);
+        //document.getElementById('flowersDiv').appendChild(text);
+        
+        //let li = document.createElement('li');
+        //ul.appendChild(li);
+        //li.innerHTML = element.name;
+        })
+        secondRow.forEach(element => {
+            var img = document.createElement("img");
+            //var text = document.createElement("p");
+            //text.innerText = element.name;
+            img.src = element.picture;
+            var rowTwo=document.getElementById("myTable").rows[1];
+            var items=rowTwo.insertCell(-1);
+            items.innerHTML=element.name;
+            items.appendChild(img);
+            //document.getElementById('flowersDiv').appendChild(img);
+            //document.getElementById('flowersDiv').appendChild(text);
+        
+        //let li = document.createElement('li');
+        //ul.appendChild(li);
+        //li.innerHTML = element.name;
+        })
+
     </script>
 </body>
 </html>
